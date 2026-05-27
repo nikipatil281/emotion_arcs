@@ -81,6 +81,16 @@ Notes:
 - `prepare_data.py` also supports `validation.txt` instead of `val.txt`.
 - The scripts parquet file should contain a title-like column and a script-text-like column. The code tries to detect common names automatically.
 
+## Data Sources
+
+- Emotion classification dataset:
+  local text files stored under `data/raw/emotions/`
+
+- Movie scripts source:
+  `https://imsdb.com/`
+
+The raw scripts directory is intentionally ignored by Git because script exports and derived parquet files are large and can easily exceed normal GitHub-friendly repository size limits.
+
 ## End-to-End Pipeline
 
 Run the project in this order:
@@ -170,6 +180,7 @@ http://localhost:8501
 - Scene boundaries are heuristic, not screenplay-structure-accurate.
 - Character parsing is also heuristic and may miss or merge some speaker labels depending on script formatting.
 - Large processed files and model artifacts are intentionally ignored by Git via `.gitignore`.
+- `data/raw/scripts/` is also ignored by Git; add your local script dataset there before running the pipeline.
 
 ## Suggested Git Workflow
 
